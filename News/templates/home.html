@@ -1,0 +1,27 @@
+ {% extends 'base.html' %}
+
+
+
+ {% block content %}
+
+     <h1>News</h1> 
+    <ul>
+
+     {% for post in news %}
+
+     <li><a href="{% url 'news-detail' post.pk %}">{{post.headline}} </a>- {{post.author}}<br/> <a href="{% url 'update-news-post' post.pk %}">Edit</a> <a href="{% url 'delete-news-post' post.pk %}">Delete</a></li>
+
+     <hr>
+
+
+     {% endfor %}
+
+
+    </ul>
+
+
+    <a href="{% url 'create-news-post' %}" class="btn btn-secondary">Add Post</a>
+
+    {% endblock content %}
+
+

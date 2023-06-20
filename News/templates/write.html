@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1 class="mt-5">Create News Post</h1>
+
+
+<form method="POST">
+
+    {% csrf_token %}
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label mt-2">News Title</label>
+    <input type="text" class="form-control" name="title" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label mt-2">News Headline</label>
+    <input type="text" class="form-control" name="headline" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="12" name="content" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Post</button>
+
+</form>
+
+
+
+
+
+{% endblock  %}

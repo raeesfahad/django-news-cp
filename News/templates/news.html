@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}{{content.title}}{% endblock title %}
+
+{% block content %}
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>{{content.headline}}</h1> 
+
+<small>{{content.author.first_name}} {{content.author.last_name}}</small> <small> posted on {{content.created}}</small> <p> </p><small> last updated {{content.updated|timesince}} </small>
+<hr>
+
+<p>{{content.content}}</p>
+
+<br/>
+<br/>
+
+
+
+<a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+
+{% endblock content %}
+
+
